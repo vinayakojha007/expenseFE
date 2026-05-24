@@ -1,10 +1,14 @@
 import './App.css'
+import MainLayout from './layouts/MainLayout'
+
 
 function App() {
 
   return (
     <>
-     <div>Expense Tracker App</div>
+      <MainLayout>
+          <p>Content goes here</p>
+      </MainLayout>
     </>
   )
 }
