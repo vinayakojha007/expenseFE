@@ -1,40 +1,28 @@
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
-        <div>
-          <h2 className="text-sm font-semibold">
-            Expense Tracker
-          </h2>
+    <footer className="border-t bg-white">
+      <div className="flex flex-col items-center justify-between gap-3 px-4 py-4 text-sm text-zinc-500 md:flex-row md:px-6">
+        
+        {/* Left */}
+        <p>
+          © 2026 Expense Tracker. All rights reserved.
+        </p>
 
-          <p className="text-xs text-muted-foreground">
-            Production-ready finance management platform.
-          </p>
-        </div>
-
-        <div className="flex items-center gap-6 text-sm text-muted-foreground">
-          <a
-            href="/privacy"
-            className="transition-colors hover:text-foreground"
-          >
+        {/* Right */}
+        <div className="flex items-center gap-6">
+          <button className="transition hover:text-black">
             Privacy
-          </a>
+          </button>
 
-          <a
-            href="/terms"
-            className="transition-colors hover:text-foreground"
-          >
+          <button className="transition hover:text-black">
             Terms
-          </a>
+          </button>
 
-          <a
-            href="/support"
-            className="transition-colors hover:text-foreground"
-          >
+          <button className="transition hover:text-black">
             Support
-          </a>
+          </button>
         </div>
       </div>
     </footer>
-  )
+  );
 }
