@@ -1,76 +1,57 @@
+import { Bell, Menu, Search } from "lucide-react";
+
 export function Navbar() {
-  const navItems = [
-    { label: "Dashboard", href: "/dashboard" },
-    { label: "Expenses", href: "/expenses" },
-    { label: "Investments", href: "/investments" },
-    { label: "Budgets", href: "/budgets" },
-    { label: "Reports", href: "/reports" },
-  ];
-
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background">
-      <div className="mx-auto flex h-20 w-full items-center justify-between px-6">
-        {/* Left */}
-        <div className="flex items-center gap-10">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-black text-sm font-bold text-white">
-              ET
-            </div>
+    <header className="sticky top-0 z-50 h-20 border-b bg-white">
+      <div className="flex h-full items-center justify-between px-4 md:px-6">
+        
+        {/* LEFT */}
+        <div className="flex items-center gap-4">
+          
+          {/* Mobile Menu Button */}
+          <button className="flex h-11 w-11 items-center justify-center rounded-2xl border transition hover:bg-zinc-100 lg:hidden">
+            <Menu size={20} />
+          </button>
 
-            <div className="leading-tight">
-              <h1 className="text-md font-bold whitespace-nowrap">
-                {" "}
-                Expense Tracker
-              </h1>
-
-              <p className="text-xs text-muted-foreground">
-                Finance Management Platform
-              </p>
-            </div>
-          </div>
-
-          {/* Nav */}
-          <nav className="hidden items-center lg:flex">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-
-        {/* Right */}
-        <div className="flex items-center gap-3">
           {/* Search */}
-          <div className="hidden sm:block">
+          <div className="hidden items-center gap-3 rounded-2xl border bg-zinc-50 px-4 py-2 md:flex">
+            <Search size={18} className="text-zinc-400" />
+
             <input
               type="text"
-              placeholder="Search expenses..."
-              className="h-10 w-[240px] rounded-xl border bg-background px-4 text-sm outline-none ring-offset-background transition-all placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
+              placeholder="Search transactions..."
+              className="w-[220px] bg-transparent text-sm outline-none placeholder:text-zinc-400 lg:w-[300px]"
             />
           </div>
+        </div>
 
+        {/* RIGHT */}
+        <div className="flex items-center gap-3">
+          
           {/* Notification */}
-          <button className="relative flex h-10 w-10 items-center justify-center rounded-xl border hover:bg-muted">
-            🔔
-            <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500" />
+          <button className="relative flex h-11 w-11 items-center justify-center rounded-2xl border transition hover:bg-zinc-100">
+            <Bell size={18} />
+
+            <span className="absolute right-3 top-3 h-2 w-2 rounded-full bg-emerald-500" />
           </button>
 
           {/* Profile */}
-          <button className="flex shrink-0 items-center gap-3 rounded-2xl border px-3 py-2 hover:bg-muted">
+          <button className="flex items-center gap-3 rounded-2xl border px-2 py-2 transition hover:bg-zinc-100 md:px-3">
+            
+            {/* Avatar */}
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-sm font-semibold text-white">
               VO
             </div>
 
+            {/* User Info */}
             <div className="hidden text-left md:block">
-              <p className="text-sm font-semibold">Vinayak Ojha</p>
+              <p className="text-sm font-semibold leading-none">
+                Vinayak Ojha
+              </p>
 
-              <p className="text-xs text-muted-foreground">Software Engineer</p>
+              <p className="mt-1 text-xs text-zinc-500">
+                Software Engineer
+              </p>
             </div>
           </button>
         </div>

@@ -1,15 +1,12 @@
 import './App.css'
-import MainLayout from './layouts/MainLayout'
+import AppRoutes from './routes/AppRoutes';
+
 
 
 function App() {
 
   return (
-    <>
-      <MainLayout>
-          <p>Content goes here</p>
-      </MainLayout>
-    </>
+    <AppRoutes />
   )
 }
 
